@@ -33,7 +33,7 @@ Explicit non-goals (PRD `WON'T`): VU meter visuals, analog needle visuals, Spoti
 The PRD defines a strict v0.1 → v0.5 → v1.0 progression with concrete "Done" definitions. Match work to the current milestone — don't skip ahead.
 
 - **v0.1**: Hardware-only. Dial/knobs/switch wired up; OLED shows year; inputs print to serial as `[t=12.3] year=1985 ch=news lang=ko vol=70`. **No AI, no audio yet.** Validation order is prescribed: power → OLED I2C blink → encoder alone → 3 knobs alone → toggle → integration.
-- **v0.5**: AI + SFX, no music. LLM/TTS pipeline working, radio noise + tube warmup SFX, auto-inserted intro/outro phrases, background pre-caching, channel + language switching.
+- **v0.5**: AI + SFX, no music. LLM/TTS pipeline working, radio noise + tube warmup SFX, auto-inserted intro/outro phrases, background pre-caching of 1970–2026 × {ko, en} **for a single channel** (multi-channel pre-cache is a v1.0 concern), channel + language switching UI present.
 - **v1.0**: Era music from local library, polished case, USB-C primary + 18650 backup (1–2h), 7-day unattended uptime verified.
 
 ## Open questions (PRD Appendix A)
@@ -44,6 +44,6 @@ If a task touches any of these, treat the answer as not-yet-decided and surface 
 
 ## Working in this repo
 
-- The project lives under a Google Drive path with Korean characters and spaces. Always quote paths.
+- The project currently lives at `C:\Users\SM\project\ai-time-machine-radio` (plain ASCII, no spaces). Earlier sessions were run from a Google Drive path with Korean characters and spaces, so always quote paths in shell commands as a precaution — the working directory may move again.
 - The user is a Korean maker (`biscuitbox@haeyeon.ms.kr`) building this for personal/family use, not a product. Optimize suggestions for one-off hobby builds, not manufacturability.
 - The `maker-project-agent` skill is the right vehicle for hardware/firmware work on this repo (Raspberry Pi, part selection, power budgeting, Korea-specific sourcing).
